@@ -8,9 +8,8 @@ import os
 
 # create weights for the neural network
 os.system("clear")
-wih1_file = Path("NeuralNetwork/data/wih1.npy")
-wh1h2_file = Path("NeuralNetwork/data/wh1h2.npy")
-wh2o_file = Path("NeuralNetwork/data/wh2o.npy")
+wih1_file = Path("NeuralNetwork/data/wih.npy")
+wh2o_file = Path("NeuralNetwork/data/who.npy")
 
 decision = "no"
 if wih1_file.is_file() or wih1_file.is_file() or wih1_file.is_file():
