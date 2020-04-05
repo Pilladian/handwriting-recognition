@@ -11,6 +11,7 @@ The library which I used for the drawing is opencv (https://github.com/opencv/op
 The implementation of the neural network is based on the knowledge of the book 'Neuronale Netze selbst programmieren'.
 
 Functionality:
+  - install the requirements
   - you can use the already trained network by simply executing hawire.py or you can create your own network and train it by yourself
 
   - to do so create weights with manage_hawire.py
