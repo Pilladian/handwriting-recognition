@@ -40,6 +40,14 @@ class HaWiRe:
                 ind = i
         return ind
 
+    # calculate the sum of an array
+    @staticmethod
+    def calculate_sum(array):
+        s = 0
+        for a in range(len(array)):
+            s += array[a][0]
+        return s
+
     # query neural network
     def query(self, input_list):
         inputs = numpy.array(input_list, ndmin=2).T
@@ -76,11 +84,13 @@ class HaWiRe:
         second_hidden_error = numpy.dot(self.wh2o.T, output_error)
         first_hidden_error = numpy.dot(self.wh1h2.T, second_hidden_error)
 
+        error_int = self.calculate_sum(output_error)
+        print(" [ Error ] " + str(error_int * 100))
+
         # update weights
-        if self.find_max(input_list) != self.find_max(target_list):
-            self.wh2o += self.lr * numpy.dot((output_error * final_output * (1.0 - final_output)), numpy.transpose(second_hidden_output))
-            self.wh1h2 += self.lr * numpy.dot((second_hidden_error * second_hidden_output * (1.0 - second_hidden_output)), numpy.transpose(first_hidden_output))
-            self.wih1 += self.lr * numpy.dot((first_hidden_error * first_hidden_output * (1.0 - first_hidden_error)), numpy.transpose(inputs))
+        self.wh2o += self.lr * numpy.dot((output_error * final_output * (1.0 - final_output)), numpy.transpose(second_hidden_output))
+        self.wh1h2 += self.lr * numpy.dot((second_hidden_error * second_hidden_output * (1.0 - second_hidden_output)), numpy.transpose(first_hidden_output))
+        self.wih1 += self.lr * numpy.dot((first_hidden_error * first_hidden_output * (1.0 - first_hidden_error)), numpy.transpose(inputs))
 
     # save weights
     def save_weights(self):
