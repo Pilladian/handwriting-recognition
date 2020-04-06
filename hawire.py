@@ -3,6 +3,7 @@
 from NeuralNetwork import NeuralNetwork
 import numpy
 import cv2
+import os
 
 
 # boolean which is true, if left mouse button is pressed
@@ -96,8 +97,8 @@ while True:
     if key == ord(' '):
         # create input list
         input_list = create_inputs()
-        print(interpret_output(hawire.query(input_list)))
-
+        os.system("clear")
+        print("\n" + interpret_output(hawire.query(input_list)))
         create_grid()
     elif key == 27:
         break
