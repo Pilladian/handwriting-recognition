@@ -81,9 +81,9 @@ class HaWiRe:
         target = self.find_max(target_list)
         prediction = self.find_max(final_output)
         if target == prediction:
-            print(" [ t | p ] " + str(target) + " ( + ) " + str(prediction))
+            print(" [ t | p ] \t" + str(target) + " ( + ) " + str(prediction))
         else:
-            print(" [ t | p ] " + str(target) + " ( - ) " + str(prediction))
+            print(" [ t | p ] \t" + str(target) + " ( - ) " + str(prediction))
 
         # update weights
         self.who += self.lr * numpy.dot((output_error * final_output * (1.0 - final_output)), numpy.transpose(hidden_output))
