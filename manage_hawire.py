@@ -49,11 +49,11 @@ else:
                 # create its input_list
                 input_list = []
                 mul = 500 / 20
-                for a in range(20):
+                for a in range(1, 21):
                     xMin = int(a * mul - mul)
                     xMax = int(a * mul)
 
-                    for b in range(20):
+                    for b in range(1, 21):
                         yMin = int(b * mul - mul)
                         yMax = int(b * mul)
 

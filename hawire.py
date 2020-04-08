@@ -54,11 +54,11 @@ def create_inputs():
     inp_list = []
 
     mul = size / amount_squares
-    for a in range(amount_squares):
+    for a in range(1, amount_squares + 1):
         xMin = int(a * mul - mul)
         xMax = int(a * mul)
 
-        for b in range(amount_squares):
+        for b in range(1, amount_squares + 1):
             yMin = int(b * mul - mul)
             yMax = int(b * mul)
 
